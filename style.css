@@ -735,13 +735,93 @@ line-height: 1.35;
     border-bottom: 2px solid #1a73e8;
 }
 
+.countdown-section {
+  text-align: center;
+  padding: 40px 20px;
+  background: #fefdf9; /* cream background */
+  color: #2d4a2d; /* DARK GREEN TEXT */
+  font-family: 'Georgia', serif;
+}
+
+.countdown-section h2 {
+  font-size: 28px;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+  color: #2d4a2d;
+}
+
+#countdown-timer {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #2d4a2d;
+  font-weight: 600;
+}
+
+.calendar-box {
+  border: 2px solid #2d4a2d;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+  background: white; /* white box so text is visible */
+  box-shadow: 0 4px 10px rgba(45, 74, 45, 0.1);
+}
+
+.calendar-box h3 {
+  margin-bottom: 15px;
+  font-size: 22px;
+  color: #2d4a2d;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* 7 equal columns */
+  gap: 8px;
+  font-size: 16px;
+  color: #2d4a2d;
+}
+
+.calendar-grid div {
+  padding: 8px 0;
+  text-align: center;
+  font-weight: 500;
+}
+
 .wedding-day {
   background: #2d4a2d;
-  color: white;
-  border-radius: 0; /* remove circle */
-  clip-path: path('M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z');
+  color: white !important;
+  border-radius: 50%;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
   width: 35px;
   height: 35px;
+}
+
+.calendar-link {
+  display: inline-block;
+  margin-top: 25px;
+  color: #2d4a2d;
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* MOBILE FIX */
+@media (max-width: 500px) {
+  .calendar-grid {
+    gap: 4px;
+    font-size: 13px;
+  }
+  .wedding-day {
+    width: 30px;
+    height: 30px;
+  }
+  .calendar-box {
+    padding: 15px;
+  }
 }
 
 /* ==============================
