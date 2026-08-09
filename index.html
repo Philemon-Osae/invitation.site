@@ -1,0 +1,237 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Save The Date</title>
+
+  <!-- External libraries -->
+
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+
+  <!-- Google Fonts -->
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Your CSS -->
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main id="wedding-app" class="app-stage" aria-live="polite">
+
+```
+<div class="botanical one" aria-hidden="true"></div>
+<div class="botanical two" aria-hidden="true"></div>
+
+<!-- Envelope -->
+<section
+  id="envelope-scene"
+  class="envelope-scene"
+  aria-label="Sealed wedding invitation"
+>
+  <button
+    id="open-invitation"
+    type="button"
+    class="envelope-button"
+    aria-controls="invitation-scene"
+    aria-expanded="false"
+  >
+    <div class="envelope-inner">
+
+      <p class="cover-label">
+        A wedding celebration
+      </p>
+
+      <div class="cover-rule" aria-hidden="true"></div>
+
+      <h1 class="cover-couple-name">
+        Juliet &amp; Bakatel
+      </h1>
+
+      <p class="cover-announcement">
+        Are getting married
+      </p>
+
+      <span class="wax-seal" aria-hidden="true">
+        <span>J &amp; B</span>
+      </span>
+
+      <p class="open-prompt">
+        Tap the seal to open
+      </p>
+
+    </div>
+  </button>
+</section>
+
+
+<!-- Invitation -->
+<section
+  id="invitation-scene"
+  class="invitation-scene"
+  aria-labelledby="invite-heading"
+>
+
+  <article class="paper-card">
+
+    <header>
+
+      <p class="invite-label">
+        Save the date
+      </p>
+
+      <div class="detail-rule" aria-hidden="true"></div>
+
+      <p class="invite-couple-name">
+        Juliet &amp; Bakatel
+      </p>
+
+      <h2 id="invite-heading">
+        Together with their families, invite you to celebrate their love
+      </h2>
+
+    </header>
+
+
+    <!-- Couple photographs -->
+    <div class="portrait-row">
+
+      <figure class="portrait-card">
+
+        <div class="portrait-frame">
+          <img
+            class="canva-image"
+            loading="lazy"
+            src="IMG-20260809-WA0037.jpg"
+            alt="Image of Juliet"
+          >
+        </div>
+
+        <figcaption>
+          Juliet
+        </figcaption>
+
+      </figure>
+
+
+      <figure class="portrait-card">
+
+        <div class="portrait-frame">
+          <img
+            class="canva-image"
+            loading="lazy"
+            src="IMG-20260809-WA0038.jpg"
+            alt="Image of Bakatel"
+          >
+        </div>
+
+        <figcaption>
+          Bakatel
+        </figcaption>
+
+      </figure>
+
+    </div>
+
+
+    <!-- Wedding details -->
+    <section
+      class="detail-grid"
+      aria-label="Wedding details"
+    >
+
+      <div class="detail-item">
+
+        <p class="detail-label">
+          Date
+        </p>
+
+        <p class="detail-value">
+          Saturday, 12th December,2026
+        </p>
+
+      </div>
+
+
+      <div class="detail-item">
+
+        <p class="detail-label">
+          Time
+        </p>
+
+        <p class="detail-value">
+          10:00 AM
+        </p>
+
+      </div>
+
+
+      <div class="detail-item">
+
+        <p class="detail-label">
+          Venue
+        </p>
+
+        <p class="detail-value">
+          New Creation Chapel Int., Kratos-Temple, Suhum
+        </p>
+
+      </div>
+
+
+      <div class="detail-item">
+        <p class="detail-label">
+         Location
+        </p>
+
+        <p class="detail-value1">
+          <a href="https://maps.app.goo.gl/BFmr5Qo9m49ch5tY8" target="_blank">
+            View on Google Maps
+          </a>
+        </p>
+
+      </div>
+
+      
+
+    </section>
+
+
+    <!-- Closing message -->
+    <p class="closing-note">
+      Your presence would make our day even more special.
+      Formal invitation to follow.
+    </p>
+
+
+    <!-- Close button -->
+    <button
+      id="close-invitation"
+      class="close-button"
+      type="button"
+    >
+      Close invitation
+    </button>
+
+  </article>
+
+</section>
+```
+
+  </main>
+
+  <!-- Your JavaScript -->
+
+  <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,891 @@
+:root {
+--green-deep: #092f27;
+--green-shadow: #041e19;
+--green-mid: #0d4b3d;
+--gold: #c9a34d;
+--gold-light: #f4dda2;
+--ivory: #fffaf0;
+}
+
+* {
+  box-sizing: border-box;
+  }
+
+html {
+min-height: 100%;
+}
+
+body {
+width: 100%;
+min-height: 100vh;
+margin: 0;
+color: var(--ivory);
+font-family: "DM Sans", sans-serif;
+overflow-x: hidden;
+
+background:
+radial-gradient(
+circle at 50% 10%,
+rgb(23, 102, 81) 0%,
+rgb(11, 64, 52) 42%,
+rgb(3, 31, 25) 100%
+);
+}
+
+button {
+font: inherit;
+cursor: pointer;
+}
+
+button:focus-visible {
+outline: 3px solid #f6d987;
+outline-offset: 6px;
+}
+
+/* ==============================
+MAIN APPLICATION
+============================== */
+
+.app-stage {
+width: 100%;
+min-height: 100vh;
+display: grid;
+place-items: center;
+position: relative;
+padding: 1.5rem;
+overflow: hidden;
+isolation: isolate;
+}
+
+.app-stage::before,
+.app-stage::after {
+content: "";
+position: absolute;
+border-radius: 999px;
+pointer-events: none;
+z-index: -1;
+}
+
+.app-stage::before {
+width: 39rem;
+height: 39rem;
+top: -22rem;
+left: -18rem;
+
+background:
+radial-gradient(
+circle,
+rgba(243, 205, 114, 0.26),
+rgba(243, 205, 114, 0) 68%
+);
+}
+
+.app-stage::after {
+width: 42rem;
+height: 42rem;
+right: -21rem;
+bottom: -26rem;
+
+background:
+radial-gradient(
+circle,
+rgba(33, 132, 102, 0.44),
+rgba(33, 132, 102, 0) 68%
+);
+}
+
+/* ==============================
+BOTANICAL DECORATIONS
+============================== */
+
+.botanical {
+position: absolute;
+width: 21rem;
+height: 21rem;
+
+border: 1px solid rgba(242, 214, 139, 0.14);
+border-radius: 48% 52% 43% 57%;
+
+pointer-events: none;
+z-index: -1;
+}
+
+.botanical.one {
+top: 2rem;
+right: -8rem;
+
+transform: rotate(28deg);
+
+box-shadow:
+-1.2rem 1.7rem 0 -1.1rem rgba(242, 214, 139, 0.1),
+-3rem 4rem 0 -2.85rem rgba(242, 214, 139, 0.11);
+}
+
+.botanical.two {
+bottom: 3rem;
+left: -10rem;
+
+transform: rotate(-45deg);
+
+box-shadow:
+2rem -1.5rem 0 -1.85rem rgba(242, 214, 139, 0.1),
+4.3rem -2.5rem 0 -4.05rem rgba(242, 214, 139, 0.12);
+}
+
+/* ==============================
+SCENES
+============================== */
+
+.envelope-scene,
+.invitation-scene {
+width: min(100%, 52rem);
+
+transition:
+opacity 0.65s ease,
+transform 0.8s cubic-bezier(0.2, 0.85, 0.25, 1);
+}
+
+.envelope-scene {
+position: relative;
+perspective: 1200px;
+z-index: 2;
+}
+
+/* ==============================
+ENVELOPE
+============================== */
+
+.envelope-button {
+width: 100%;
+position: relative;
+display: block;
+
+overflow: hidden;
+border: 0;
+border-radius: 1.5rem;
+padding: 0;
+
+color: inherit;
+text-align: center;
+
+transform:
+rotateX(3deg)
+rotateY(-2deg);
+
+box-shadow:
+0 2.25rem 4.75rem rgba(0, 12, 8, 0.6),
+1rem 1rem 0 rgba(3, 37, 29, 0.6);
+
+transition:
+transform 0.35s ease,
+box-shadow 0.35s ease;
+}
+
+.envelope-button:hover {
+transform:
+translateY(-0.4rem)
+rotateX(1deg)
+rotateY(-1deg);
+
+box-shadow:
+0 2.8rem 5.5rem rgba(0, 12, 8, 0.65),
+1.25rem 1.25rem 0 rgba(3, 37, 29, 0.55);
+}
+
+.envelope-button::before,
+.envelope-button::after {
+content: "";
+position: absolute;
+
+z-index: 2;
+
+width: 76%;
+height: 75%;
+
+pointer-events: none;
+opacity: 0.55;
+}
+
+.envelope-button::before {
+left: -15%;
+bottom: -36%;
+
+background:
+linear-gradient(
+145deg,
+rgba(3, 32, 25, 0.95),
+transparent 70%
+);
+
+transform: rotate(34deg);
+
+border-top:
+1px solid rgba(245, 215, 139, 0.24);
+}
+
+.envelope-button::after {
+right: -15%;
+bottom: -36%;
+
+background:
+linear-gradient(
+215deg,
+rgba(3, 32, 25, 0.92),
+transparent 70%
+);
+
+transform: rotate(-34deg);
+
+border-top:
+1px solid rgba(245, 215, 139, 0.2);
+}
+
+/* ==============================
+ENVELOPE CONTENT
+============================== */
+
+.envelope-inner {
+position: relative;
+
+min-height: 30rem;
+
+display: flex;
+flex-direction: column;
+align-items: center;
+
+padding:
+clamp(2.5rem, 8vw, 5.25rem)
+2rem
+3rem;
+
+overflow: hidden;
+isolation: isolate;
+
+background:
+linear-gradient(
+135deg,
+rgb(17, 85, 68) 0%,
+rgb(7, 54, 44) 52%,
+rgb(6, 38, 31) 100%
+);
+}
+
+.envelope-inner::before {
+content: "";
+
+position: absolute;
+
+top: -13.5rem;
+left: 50%;
+
+width: 38rem;
+height: 27rem;
+
+background:
+linear-gradient(
+140deg,
+rgba(5, 40, 32, 0.18),
+rgba(221, 182, 84, 0.22) 49%,
+rgba(4, 39, 30, 0.3) 50%
+);
+
+transform:
+translateX(-50%)
+rotate(45deg);
+
+border:
+1px solid rgba(248, 221, 150, 0.16);
+
+z-index: -1;
+}
+
+.envelope-inner::after {
+content: "";
+
+position: absolute;
+inset: 0.9rem;
+
+border:
+1px solid rgba(245, 218, 148, 0.45);
+
+border-radius: 0.85rem;
+
+pointer-events: none;
+}
+
+/* ==============================
+TEXT
+============================== */
+
+.cover-label,
+.invite-label,
+.detail-label {
+font-family: "DM Sans", sans-serif;
+
+text-transform: uppercase;
+letter-spacing: 0.22em;
+
+font-size: 0.7rem;
+}
+
+.cover-label {
+color: rgb(239, 213, 142);
+font-weight: 600;
+font-size: 16px;
+letter-spacing: 0.18rem;
+}
+
+.cover-rule,
+.detail-rule {
+width: 4.75rem;
+height: 1px;
+
+margin: 1.25rem auto;
+
+background:
+linear-gradient(
+to right,
+transparent,
+#d9b45f,
+transparent
+);
+
+box-shadow:
+0 1px 7px rgba(255, 221, 138, 0.5);
+}
+
+.cover-couple-name {
+margin: 0;
+
+color: rgb(255, 248, 220);
+
+font-family: "Playfair Display", serif;
+font-weight: 500;
+
+font-size: clamp(2rem, 7vw, 2.7rem);
+line-height: 1.12;
+}
+
+.cover-announcement {
+margin: 1rem 0 0;
+
+color: rgb(244, 223, 165);
+
+font-family: "Playfair Display", serif;
+
+font-size: 20px;
+font-style: italic;
+}
+
+/* ==============================
+WAX SEAL
+============================== */
+
+.wax-seal {
+width: 6.7rem;
+height: 6.7rem;
+
+display: grid;
+place-items: center;
+
+position: relative;
+z-index: 4;
+
+margin-top: auto;
+
+border:
+1px solid rgba(255, 232, 167, 0.7);
+
+border-radius: 50%;
+
+background:
+radial-gradient(
+circle at 33% 28%,
+#e3c26c 0%,
+#b98a2e 24%,
+#77510f 69%,
+#4e3509 100%
+);
+
+box-shadow:
+inset 0.35rem 0.45rem 0.7rem rgba(255, 236, 176, 0.35),
+inset -0.55rem -0.6rem 0.85rem rgba(52, 29, 2, 0.42),
+0 0.85rem 1.35rem rgba(0, 15, 10, 0.46);
+
+transition:
+transform 0.25s ease,
+box-shadow 0.25s ease;
+}
+
+.wax-seal::before {
+content: "";
+
+position: absolute;
+inset: 0.45rem;
+
+border:
+1px solid rgba(255, 239, 186, 0.5);
+
+border-radius: 50%;
+}
+
+.envelope-button:hover .wax-seal {
+transform:
+translateY(-0.3rem)
+rotate(-3deg);
+
+box-shadow:
+inset 0.35rem 0.45rem 0.7rem rgba(255, 236, 176, 0.4),
+inset -0.55rem -0.6rem 0.85rem rgba(52, 29, 2, 0.42),
+0 1.25rem 1.55rem rgba(0, 15, 10, 0.5);
+}
+
+.wax-seal span {
+position: relative;
+
+color: rgb(255, 240, 183);
+
+font-family: "Playfair Display", serif;
+
+font-size: 1.85rem;
+font-style: italic;
+
+line-height: 1;
+
+text-shadow:
+0 1px 0 rgba(255, 240, 185, 0.45);
+}
+
+.open-prompt {
+margin: 1.15rem 0 0;
+
+color: rgb(242, 217, 149);
+
+font-size: 0.72rem;
+font-weight: 500;
+
+text-transform: uppercase;
+letter-spacing: 0.14em;
+}
+
+/* ==============================
+INVITATION
+============================== */
+
+.invitation-scene {
+display: none;
+
+opacity: 0;
+transform:
+translateY(2rem)
+scale(0.96);
+
+perspective: 1400px;
+}
+
+.paper-card {
+position: relative;
+
+padding:
+clamp(2.25rem, 6vw, 4.5rem);
+
+overflow: hidden;
+
+border:
+1px solid rgba(176, 132, 41, 0.54);
+
+background:
+linear-gradient(
+135deg,
+rgb(255, 253, 245) 0%,
+rgb(246, 233, 200) 100%
+);
+
+box-shadow:
+0 2.25rem 5rem rgba(0, 14, 9, 0.58),
+1rem 1rem 0 rgba(5, 49, 39, 0.55),
+inset 0 0 0 0.5rem rgba(255, 252, 235, 0.35);
+
+text-align: center;
+
+transform-style: preserve-3d;
+}
+
+.paper-card::before,
+.paper-card::after {
+content: "✦";
+
+position: absolute;
+
+color: rgba(153, 107, 24, 0.2);
+
+font-family: "Playfair Display", serif;
+
+font-size: 8rem;
+line-height: 1;
+}
+
+.paper-card::before {
+top: 0.9rem;
+left: 1.2rem;
+}
+
+.paper-card::after {
+right: 1.2rem;
+bottom: 0.6rem;
+
+transform: rotate(180deg);
+}
+
+/* ==============================
+INVITATION HEADER
+============================== */
+
+.invite-label {
+margin: 0;
+
+color: rgb(155, 113, 33);
+
+font-weight: 600;
+font-size: 16px;
+
+letter-spacing: 0.18rem;
+}
+
+.invite-couple-name {
+margin: 0 0 0.75rem;
+
+color: rgb(23, 97, 76);
+
+font-family: "Playfair Display", serif;
+
+font-size: 22px;
+font-style: italic;
+}
+
+#invite-heading {
+margin: 0;
+
+color: rgb(12, 64, 51);
+
+font-family: "Playfair Display", serif;
+
+font-weight: 500;
+
+font-size: clamp(1.5rem, 5vw, 1.9rem);
+
+line-height: 1.25;
+}
+
+/* ==============================
+PORTRAITS
+============================== */
+
+.portrait-row {
+position: relative;
+z-index: 1;
+
+display: grid;
+
+grid-template-columns:
+repeat(2, minmax(0, 1fr));
+
+gap: clamp(1rem, 4vw, 2rem);
+
+max-width: 36rem;
+
+margin: 2.2rem auto;
+}
+
+.portrait-card {
+margin: 0;
+}
+
+.portrait-frame {
+position: relative;
+
+aspect-ratio: 4 / 5;
+
+padding: 0.45rem;
+
+background:
+linear-gradient(
+135deg,
+#f3d98e,
+#9f7424
+);
+
+box-shadow:
+0.55rem 0.65rem 0 rgba(23, 89, 67, 0.22),
+0 1rem 1.5rem rgba(39, 32, 6, 0.18);
+
+transform: rotate(-1.5deg);
+}
+
+.portrait-card:nth-child(2) .portrait-frame {
+transform: rotate(1.5deg);
+}
+
+.portrait-frame img {
+display: block;
+
+width: 100%;
+height: 100%;
+
+object-fit: cover;
+
+filter:
+sepia(0.1)
+saturate(0.88)
+contrast(1.03);
+}
+
+.portrait-card figcaption {
+margin-top: 0.85rem;
+
+color: rgb(18, 80, 62);
+
+font-family: "Playfair Display", serif;
+
+font-size: 21px;
+font-style: italic;
+}
+
+/* ==============================
+WEDDING DETAILS
+============================== */
+
+.detail-grid {
+position: relative;
+z-index: 1;
+
+display: grid;
+
+grid-template-columns:
+repeat(3, minmax(0, 1fr));
+
+gap: 1rem;
+
+max-width: 40rem;
+
+margin: 0 auto;
+}
+
+.detail-item {
+padding: 0.9rem 0.55rem;
+
+border-top:
+1px solid rgba(146, 104, 26, 0.3);
+
+border-bottom:
+1px solid rgba(146, 104, 26, 0.3);
+}
+
+.detail-label {
+margin: 0;
+
+color: rgb(155, 113, 33);
+
+font-weight: 600;
+font-size: 16px;
+
+letter-spacing: 0.12rem;
+}
+
+.detail-value {
+margin: 0.45rem 0 0;
+
+color: rgb(10, 64, 50);
+
+font-family: "Playfair Display", serif;
+
+font-weight: 500;
+
+font-size: 18px;
+
+line-height: 1.35;
+}
+
+.detail-value1 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.detail-value1 a {
+    color: #1a73e8;
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.detail-value1 a::before {
+    content: "📍";
+}
+
+.detail-value1 a:hover {
+    color: #0c47a1;
+    border-bottom: 2px solid #1a73e8;
+}
+
+
+/* ==============================
+CLOSING NOTE
+============================== */
+
+.closing-note {
+position: relative;
+z-index: 1;
+
+max-width: 29rem;
+
+margin: 2.25rem auto 1.5rem;
+
+color: rgb(55, 104, 90);
+
+font-family: "Playfair Display", serif;
+
+font-size: 18px;
+font-style: italic;
+
+line-height: 1.65;
+}
+
+/* ==============================
+CLOSE BUTTON
+============================== */
+
+.close-button {
+position: relative;
+z-index: 1;
+
+border:
+1px solid rgba(10, 74, 57, 0.62);
+
+padding: 0.72rem 1.15rem;
+
+background: transparent;
+
+color: rgb(11, 74, 57);
+
+font-family: "DM Sans", sans-serif;
+
+font-size: 16px;
+font-weight: 600;
+
+letter-spacing: 0.08rem;
+
+text-transform: uppercase;
+
+transition:
+transform 0.2s ease,
+box-shadow 0.2s ease;
+}
+
+.close-button:hover {
+transform: translateY(-2px);
+
+box-shadow:
+0 0.45rem 0.9rem rgba(6, 54, 41, 0.2);
+}
+
+/* ==============================
+OPEN STATE
+============================== */
+
+.is-open .envelope-scene {
+display: none;
+
+opacity: 0;
+
+transform:
+translateY(-1.5rem)
+scale(0.95);
+}
+
+.is-open .invitation-scene {
+display: block;
+
+opacity: 1;
+
+transform:
+translateY(0)
+scale(1);
+
+animation:
+unfold 0.9s cubic-bezier(0.16, 0.9, 0.25, 1) both;
+}
+
+/* ==============================
+ANIMATION
+============================== */
+
+@keyframes unfold {
+from {
+opacity: 0;
+transform:
+  translateY(2.4rem)
+  rotateX(-14deg)
+  scale(0.94);
+}
+
+to {
+opacity: 1;
+transform:
+  translateY(0)
+  rotateX(0)
+  scale(1);
+}
+}
+
+/* ==============================
+MOBILE
+============================== */
+
+@media (max-width: 560px) {
+
+.app-stage {
+padding: 1rem;
+}
+
+.envelope-inner {
+min-height: 31rem;
+}
+
+.detail-grid {
+grid-template-columns: 1fr;
+
+gap: 0.7rem;
+}
+
+.paper-card {
+padding: 2.5rem 1.25rem;
+}
+
+.portrait-row {
+gap: 0.9rem;
+}
+
+}
+
+/* ==============================
+REDUCED MOTION
+============================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+*,
+*::before,
+*::after {
+animation-duration: 0.01ms !important;
+transition-duration: 0.01ms !important;
+}
+
+}
