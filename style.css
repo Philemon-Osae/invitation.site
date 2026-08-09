@@ -824,6 +824,50 @@ line-height: 1.35;
   }
 }
 
+.wishes-section {
+  padding: 50px 20px;
+  background: #fefdf9; /* cream background */
+  text-align: center;
+  color: #2d4a2d; /* dark green text */
+  font-family: 'Georgia', serif;
+}
+
+.wishes-section h2 {
+  font-size: 28px;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+
+.wishes-section p {
+  margin-bottom: 25px;
+  font-size: 16px;
+}
+
+.form-container {
+  max-width: 650px;
+  margin: 20px auto;
+  border: 2px solid #2d4a2d; /* dark green border */
+  border-radius: 15px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 4px 12px rgba(45, 74, 45, 0.1);
+}
+
+.view-wishes {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #2d4a2d;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+.view-wishes:hover {
+  background: #3e613e;
+}
+
 /* ==============================
 CLOSING NOTE
 ============================== */
